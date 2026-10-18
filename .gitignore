@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# uv / virtualenv
+.venv/
+
+# OS / editor
+.DS_Store
+*.swp
+*~
+
+# Outputs from examples and workflows
+out/
+*.player
+*.meta.json
+
+# loads/cache data
+.cache/

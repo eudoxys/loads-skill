@@ -1,0 +1,47 @@
+[project]
+name = "loadskill"
+version = "0.1.0"
+description = "Agent skill and helpers for building US county electric load models with eudoxys/loads"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "David P. Chassin", email = "dchassin@eudoxys.com" }]
+requires-python = "==3.12.*"
+dependencies = [
+    "loads @ git+https://github.com/eudoxys/loads",
+    "numpy",
+    "pandas",
+]
+
+[project.urls]
+Homepage = "https://github.com/eudoxys/loads-skill"
+Upstream = "https://github.com/eudoxys/loads"
+Documentation = "https://www.eudoxys.com/loads"
+
+[project.scripts]
+loadskill = "loadskill.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/loadskill"]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+examples = ["matplotlib", "marimo"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "network: needs NREL/Census/NSRDB access and NSRDB credentials (deselect with -m 'not network')",
+]
+addopts = "-m 'not network'"
