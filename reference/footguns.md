@@ -5,9 +5,14 @@ the source, with the workaround. Items marked **[tested]** are reproduced
 offline in `tests/test_loads_api.py`; if such a test starts failing, the
 upstream behavior changed: update this file, do not just delete the test.
 
+Upstream tracking: #26 (items 1, 3), #27 (11–13), #28 (14), #29 (16),
+#30 (19), #31 (20), #32 (7, 9), #33 (17), #15 (22), #12 (DG sign, lag
+trimming), all at https://github.com/eudoxys/loads/issues. Check whether an
+issue is closed before relying on a workaround below.
+
 Do not silently "fix" these in `loads` from inside a workflow. Work around
 them here and mention them to the user when they affect results; offer to
-open an upstream issue at https://github.com/eudoxys/loads/issues.
+check the tracking issues above or open a new one.
 
 ## Modes and arguments
 
